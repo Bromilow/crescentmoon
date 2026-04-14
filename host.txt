@@ -1,0 +1,285 @@
+CRESCENT MOON INSULATION LLC — PUBLISHING INSTRUCTIONS
+GoDaddy Deluxe Managed WordPress Hosting (SSL Included)
+=======================================================
+
+IMPORTANT NOTE ON HOSTING TYPE
+--------------------------------
+This is a Managed WordPress hosting plan. WordPress is pre-installed and
+managed by GoDaddy. We are deploying a STATIC HTML site (no WordPress CMS).
+
+The approach: upload all static HTML/CSS/JS files via SFTP and configure
+.htaccess to serve them INSTEAD of routing traffic through WordPress.
+SSL is already handled by GoDaddy — no redirect rule needed in .htaccess.
+
+=======================================================
+STEP 1 — GET YOUR SFTP CREDENTIALS
+=======================================================
+
+1. Go to https://account.godaddy.com and log in.
+2. Click "My Products" from the top menu.
+3. Find your Managed WordPress hosting plan and click "Manage".
+4. In the WordPress dashboard, look for "FTP / SFTP" or "File Manager"
+   in the sidebar or settings panel.
+5. Note down:
+   - Hostname (e.g., ftp.yourdomain.com or your server IP)
+   - Username
+   - Password
+   - Port (usually 22 for SFTP, 21 for FTP)
+
+   Alternatively: Go to GoDaddy cPanel (if available on your plan) →
+   "FTP Accounts" to find or reset credentials.
+
+=======================================================
+STEP 2 — CONNECT VIA SFTP (FileZilla Recommended — Free)
+=======================================================
+
+1. Download FileZilla from https://filezilla-project.org (free)
+2. Open FileZilla → File → Site Manager → New Site
+3. Protocol: SFTP (SSH File Transfer Protocol)
+4. Host: [your hostname from Step 1]
+5. Port: 22
+6. Logon Type: Normal
+7. User: [your username]
+8. Password: [your password]
+9. Click Connect.
+
+=======================================================
+STEP 3 — LOCATE THE PUBLIC FOLDER
+=======================================================
+
+After connecting, navigate to:
+   /public_html/
+
+This is the web root — everything here is served publicly.
+
+You will likely see existing WordPress files here:
+   - index.php
+   - wp-config.php
+   - wp-content/
+   - wp-includes/
+   - .htaccess
+   - etc.
+
+DO NOT DELETE THESE YET. Follow the steps below carefully.
+
+=======================================================
+STEP 4 — BACKUP EXISTING FILES (Safety)
+=======================================================
+
+In FileZilla, right-click the public_html folder and download a
+full backup to your local computer before making any changes.
+
+=======================================================
+STEP 5 — UPLOAD THE STATIC SITE FILES
+=======================================================
+
+Your local site folder structure to upload:
+
+  index.html                    → upload to /public_html/
+  about.html                    → upload to /public_html/
+  services.html                 → upload to /public_html/
+  service-areas.html            → upload to /public_html/
+  contact.html                  → upload to /public_html/
+  404.html                      → upload to /public_html/
+  sitemap.xml                   → upload to /public_html/
+  robots.txt                    → upload to /public_html/
+  favicon.ico                   → upload to /public_html/
+  services/ (folder)            → upload folder to /public_html/services/
+  assets/ (folder)              → upload folder to /public_html/assets/
+
+How to upload in FileZilla:
+- Left panel = your computer
+- Right panel = the server
+- Navigate to your local project folder on the left
+- Drag and drop files/folders to the right panel (/public_html/)
+
+IMPORTANT: When prompted to overwrite index.html vs index.php —
+your site uses index.html so the existing WordPress index.php can
+be left in place (HTML takes priority when configured correctly in Step 6).
+
+=======================================================
+STEP 6 — UPDATE .htaccess TO SERVE STATIC SITE
+=======================================================
+
+In FileZilla, find the existing .htaccess file in /public_html/.
+Right-click → View/Edit (opens in a text editor).
+
+REPLACE the entire contents with the following:
+
+----------- START OF .htaccess -----------
+
+# Crescent Moon Insulation — Static Site on GoDaddy Managed WP Hosting
+# SSL is handled by GoDaddy — no HTTPS redirect needed here
+
+Options -Indexes
+
+# Serve static HTML files (priority over WordPress index.php)
+DirectoryIndex index.html index.php
+
+# Serve static pages — map clean URLs to .html files
+RewriteEngine On
+
+# Skip rewriting for actual files and directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Serve .html files for extensionless URLs
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Custom 404
+ErrorDocument 404 /404.html
+
+# Enable Gzip Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp       "access plus 1 year"
+  ExpiresByType image/jpeg       "access plus 1 year"
+  ExpiresByType image/png        "access plus 1 year"
+  ExpiresByType image/svg+xml    "access plus 1 year"
+  ExpiresByType image/x-icon     "access plus 1 year"
+  ExpiresByType text/css         "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html        "access plus 1 hour"
+  ExpiresByType font/woff2       "access plus 1 year"
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+----------- END OF .htaccess -----------
+
+Save the file and upload it back (FileZilla will ask to upload the changes).
+
+NOTE: If GoDaddy's Managed WordPress plan locks the .htaccess and
+prevents modification, see the TROUBLESHOOTING section at the bottom.
+
+=======================================================
+STEP 7 — VERIFY SSL IS ACTIVE
+=======================================================
+
+GoDaddy Managed WordPress hosting includes SSL automatically.
+To confirm:
+1. Go to your GoDaddy Managed WordPress dashboard.
+2. Look for "SSL" or "Security" — it should show "Active".
+3. Visit https://yourdomain.com — the padlock icon should appear.
+
+If not active, go to GoDaddy dashboard → SSL Certificates → Activate.
+
+=======================================================
+STEP 8 — TEST THE SITE
+=======================================================
+
+After uploading all files and updating .htaccess:
+
+1. Open a browser and visit: https://yourdomain.com
+   → Should show the homepage (index.html)
+
+2. Test each page:
+   - https://yourdomain.com/about
+   - https://yourdomain.com/services
+   - https://yourdomain.com/contact
+   - https://yourdomain.com/service-areas
+   - https://yourdomain.com/services/spray-foam-insulation
+   - https://yourdomain.com/services/blown-in-insulation
+   - https://yourdomain.com/services/batt-insulation
+   - https://yourdomain.com/services/commercial-insulation
+   - https://yourdomain.com/services/new-construction-insulation
+
+3. Test a broken URL to confirm 404 page works:
+   - https://yourdomain.com/doesnotexist
+
+4. Confirm mobile layout on a phone.
+
+=======================================================
+STEP 9 — SUBMIT TO GOOGLE SEARCH CONSOLE
+=======================================================
+
+1. Go to https://search.google.com/search-console
+2. Sign in with your Google account (crescentmoonco2022@gmail.com).
+3. Add property → URL prefix → enter https://yourdomain.com
+4. Verify ownership (easiest: download HTML file and upload to /public_html/)
+5. After verification → Sitemaps → Submit: https://yourdomain.com/sitemap.xml
+6. Google will begin indexing within a few days to a few weeks.
+
+=======================================================
+STEP 10 — GOOGLE BUSINESS PROFILE
+=======================================================
+
+1. Go to https://business.google.com
+2. Sign in with crescentmoonco2022@gmail.com
+3. Search for "Crescent Moon Insulation" — if a listing exists, claim it.
+   If not, click "Add your business".
+4. Set business type to "Service area business" (no fixed public address).
+5. Service area: Select cities/zip codes within 1 hour of Pillager, MN.
+6. Category: Insulation Contractor
+7. Phone: (218) 232-9884
+8. Website: https://yourdomain.com
+9. Hours: Monday–Friday 7:00 AM – 5:00 PM
+10. Add photos of completed work, the team, and the logo.
+
+This is critical for appearing in local searches like
+"insulation contractor near Brainerd MN".
+
+=======================================================
+UPDATING THE SITE IN FUTURE
+=======================================================
+
+When you need to update a page:
+1. Edit the HTML file locally.
+2. Connect via FileZilla (saved credentials will reconnect quickly).
+3. Upload only the changed file(s) to the same location in /public_html/.
+4. If you updated CSS or JS, append ?v=2 to the filename reference in HTML
+   to bust browser caches. Example: styles.css?v=2
+
+=======================================================
+TROUBLESHOOTING
+=======================================================
+
+PROBLEM: .htaccess is locked / can't be edited
+SOLUTION: Contact GoDaddy support and ask them to allow .htaccess
+modification on your Managed WordPress plan. Alternatively, ask them
+to switch your plan to "Web Hosting" (cPanel-based), which gives
+full .htaccess control and is better suited for static sites.
+
+PROBLEM: Homepage still shows WordPress default page
+SOLUTION: In FileZilla, rename the existing /public_html/index.php
+to /public_html/index.php.bak — this forces the server to use your
+index.html instead.
+
+PROBLEM: Pages return 404 (clean URLs not working)
+SOLUTION: Ensure mod_rewrite is enabled on your server.
+Contact GoDaddy support to confirm mod_rewrite is active on your plan.
+
+PROBLEM: Images not loading
+SOLUTION: Check file paths. All image references in HTML should use
+relative paths from the file's location, e.g., ../assets/images/photo.webp
+
+PROBLEM: SSL not showing (no padlock)
+SOLUTION: Go to GoDaddy Managed WordPress dashboard → Settings →
+SSL/TLS → Force HTTPS → Enable.
+
+=======================================================
+CONTACT & CREDENTIALS REFERENCE
+=======================================================
+
+Business email: crescentmoonco2022@gmail.com
+Business phone: (218) 232-9884
+Business hours: Monday–Friday, 7:00 AM – 5:00 PM
+Service area: 1-hour radius around Pillager, MN (Crow Wing County)
+GoDaddy account: Log in at https://account.godaddy.com
+Google Search Console: https://search.google.com/search-console
+Google Business Profile: https://business.google.com

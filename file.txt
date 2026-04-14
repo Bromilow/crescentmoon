@@ -1,0 +1,79 @@
+Project Brief: Crescent Moon Insulation Website
+You are building a modern, high-end static website for a professional insulation company based in Minnesota, USA.
+Company Details
+Company name: Crescent Moon Insulation
+Owner: Ben
+Contact number: +1 218 232 9884
+Industry: Residential & commercial insulation (construction/trades)
+Website type: Static website (no CMS, no dynamic functionality)
+Design Direction
+Overall Look & Feel
+Modern, premium, bold but minimal
+Clean, confident, and professional
+Established and trustworthy, not flashy
+No clutter, no decorative nonsense
+Strong white space, clear hierarchy, easy-to-scan sections
+This should feel like a well-established national insulation brand, not a small DIY contractor site.
+Colour Palette
+The official colour palette is located in assets/palette
+The logo is located in assets/CrescentMoon
+Usage rules:
+White must dominate the layout
+Red is used sparingly for:
+Call-to-action buttons
+Key highlights
+Icons or emphasis elements
+Black and charcoal are used for structure, text, and contrast
+Avoid overusing red. The site should feel clean and calm, not aggressive.
+Typography
+Use the font defined in the palette assets
+Sans-serif, modern, and readable
+Bold, confident headings
+Clean, legible body text
+No decorative or playful fonts
+Layout & Structure Inspiration
+Use https://insulationcommandos.com as the primary structural and UX inspiration.
+Requirements:
+Match the page structure, navigation, and overall layout logic
+Include the same pages as the inspiration site
+Re-write all copy so it is:
+Relevant to Crescent Moon Insulation
+Relevant to Minnesota
+Relevant to Ben as the owner
+Do not copy brand-specific language, claims, or locations from the inspiration site
+All imagery must be high-quality stock images only.
+No reused or scraped images.
+Page & Section Expectations
+Each page should include:
+Clear hero section with strong headline and CTA
+Scannable content blocks
+Card-style sections where appropriate
+Clear trust-building elements (experience, professionalism, reliability)
+Strong, visible “Get a Quote / Contact” CTAs
+Navigation should be simple, obvious, and sticky if appropriate.
+What to Avoid
+Busy backgrounds
+Overuse of red
+Visual gimmicks or excessive animation
+Dense text blocks
+Anything that feels outdated or “contractor brochure” style
+Agent Collaboration Requirement
+Use three Opus sub-agents to assist with this task:
+UX / Structure Agent
+Analyse insulationcommandos.com
+Define page structure, layout patterns, and section hierarchy
+Design / Visual Agent
+Apply the colour palette, typography, spacing, and UI rules
+Ensure a modern, premium visual style
+Copy / Content Agent
+Rewrite all copy to be original and relevant
+Maintain professional, confident, and trustworthy tone
+Combine all outputs into one cohesive, detailed implementation plan before generating code or files.
+Final Goal
+The final website should feel:
+Modern
+Professional
+Trustworthy
+Clean
+Confident
+It should look like a company customers trust with their home, comfort, and money.
