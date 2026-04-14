@@ -3,6 +3,9 @@
 # GoDaddy Managed WordPress (static site deployment)
 # ============================================================
 
+# --- Directory index preference ---
+DirectoryIndex index.html index.php
+
 # --- Strip trailing slashes, clean URLs ---
 # Note: HTTPS and www are handled by GoDaddy — no rules needed here
 <IfModule mod_rewrite.c>
