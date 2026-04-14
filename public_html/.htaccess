@@ -12,10 +12,9 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-  # Handle cases where a .html file and a same-named directory both exist (e.g. blog)
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteCond %{REQUEST_FILENAME} -d
-  RewriteRule ^(.*)$ $1.html [L]
+  # Explicit rules for paths that clash with same-named directories
+  RewriteRule ^blog$ /blog.html [L]
+  RewriteRule ^services$ /services.html [L]
 
   # Clean URLs (serve .html files without extension)
   RewriteCond %{REQUEST_FILENAME} !-f
