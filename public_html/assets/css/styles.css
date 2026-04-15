@@ -2159,3 +2159,28 @@ a {
     transition: none !important;
   }
 }
+
+
+/* ==========================================================================
+   34. Responsive Hero Background Images
+   ========================================================================== */
+
+/* Desktop (default) */
+[data-hero="home"]          { background-image: url('/assets/images/hero-home.webp') }
+[data-hero="about"]         { background-image: url('/assets/images/hero-about.webp') }
+[data-hero="contact"]       { background-image: url('/assets/images/hero-contact.webp') }
+[data-hero="service-areas"] { background-image: url('/assets/images/hero-service-areas.webp') }
+[data-hero="cta"]           { background-image: url('/assets/images/cta-background.webp') }
+[data-hero="service"]       { background-image: url('/assets/servicepage/Hero%20Image%20on%20all%20service%20Pages.webp') }
+[data-hero="blog"]          { background-image: url('/assets/images/blog/blog-1-featured.webp') }
+
+/* Mobile — swap to smaller images below 768px */
+@media (max-width: 767px) {
+  [data-hero="home"]          { background-image: url('/assets/images/hero-home-mobile.webp') }
+  [data-hero="about"]         { background-image: url('/assets/images/hero-about-mobile.webp') }
+  [data-hero="contact"]       { background-image: url('/assets/images/hero-contact-mobile.webp') }
+  [data-hero="service-areas"] { background-image: url('/assets/images/hero-service-areas-mobile.webp') }
+  [data-hero="cta"]           { background-image: url('/assets/images/cta-background-mobile.webp') }
+  [data-hero="service"]       { background-image: url('/assets/servicepage/Hero%20Image%20on%20all%20service%20Pages-mobile.webp') }
+  [data-hero="blog"]          { background-image: url('/assets/images/blog/blog-1-featured.webp') }
+}
