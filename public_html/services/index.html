@@ -18,23 +18,28 @@
   <meta name="twitter:title" content="Insulation Services | Crescent Moon Insulation, Minnesota">
   <meta name="twitter:description" content="Explore our full range of insulation services: blown-in, attic, whole home, and commercial insulation. Serving central Minnesota. Free estimates.">
   <meta name="twitter:image" content="https://www.crescentmooninsulation.com/assets/images/cta-background.webp">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="image" href="/assets/images/cta-background.webp" fetchpriority="high">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=2.0">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Crescent Moon Insulation LLC","telephone":"+1-218-232-9884","email":"crescentmoonco2022@gmail.com","areaServed":{"@type":"State","name":"Minnesota"},"url":"https://www.crescentmooninsulation.com","priceRange":"$$","description":"Professional residential and commercial insulation contractor serving central Minnesota."}
   </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-nav" id="site-nav">
   <div class="container site-nav__inner">
-    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48"></a>
+    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48" fetchpriority="high"></a>
     <nav aria-label="Main navigation">
       <ul class="site-nav__links">
         <li><a href="/" class="site-nav__link">Home</a></li>
@@ -92,6 +97,7 @@
   </div>
   <div class="site-nav__mobile" id="nav-mobile" hidden>
     <button class="site-nav__mobile-close" aria-label="Close menu">&#x2715;</button>
+    <nav aria-label="Mobile navigation">
     <ul class="site-nav__mobile-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
@@ -149,10 +155,11 @@
       <li><a href="/blog">Blog</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
+    </nav>
     <a href="/contact" class="btn btn--primary">Get a Free Quote</a>
   </div>
 </header>
-<main>
+<main id="main-content">
 
 <!-- Hero -->
 <section class="hero hero--short" id="hero" style="background-image: url('/assets/images/cta-background.webp');">
@@ -172,70 +179,70 @@
     <p>From attic upgrades to full commercial builds, we install the right insulation for every job, using top-grade materials and proven techniques built for Minnesota's climate.</p>
     <div class="cards-grid">
       <div class="card">
-        <i data-lucide="home"></i>
+        <i data-lucide="home" aria-hidden="true"></i>
         <h3>Attic Insulation</h3>
         <p>The most impactful upgrade for most Minnesota homes. Reduces heat loss, lowers energy bills, and prevents ice dams.</p>
-        <a href="/services/attic-insulation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/attic-insulation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="shield-check"></i>
+        <i data-lucide="shield-check" aria-hidden="true"></i>
         <h3>Attic Decontamination &amp; Sanitization</h3>
         <p>Remove contaminants, rodent waste, and mold before reinstalling insulation. Restore a clean, healthy attic environment.</p>
-        <a href="/services/attic-decontamination" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/attic-decontamination" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="layers"></i>
+        <i data-lucide="layers" aria-hidden="true"></i>
         <h3>Crawl Space Insulation</h3>
         <p>Stop cold floors, moisture, and energy loss from below. A commonly overlooked source of heat loss in Minnesota homes.</p>
-        <a href="/services/crawl-space-insulation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/crawl-space-insulation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="wind"></i>
+        <i data-lucide="wind" aria-hidden="true"></i>
         <h3>Blown-In Insulation</h3>
         <p>Fast, effective insulation that fills every corner and cavity. Ideal for upgrading existing insulation and preventing ice dams.</p>
-        <a href="/services/blown-in-insulation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/blown-in-insulation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="wrench"></i>
+        <i data-lucide="wrench" aria-hidden="true"></i>
         <h3>Drill &amp; Fill Insulation</h3>
         <p>Inject insulation into existing walls without opening them up, the smart solution for adding wall insulation to finished homes.</p>
-        <a href="/services/drill-fill-insulation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/drill-fill-insulation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="shield"></i>
+        <i data-lucide="shield" aria-hidden="true"></i>
         <h3>Whole Home Insulation</h3>
         <p>A comprehensive approach covering attic, walls, crawl space, and more for maximum year-round comfort and efficiency.</p>
-        <a href="/services/whole-home-insulation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/whole-home-insulation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="sun"></i>
+        <i data-lucide="sun" aria-hidden="true"></i>
         <h3>Radiant Barrier Insulation</h3>
         <p>Reflect radiant heat away from your attic. Reduces summer cooling loads and keeps upper floors significantly more comfortable.</p>
-        <a href="/services/radiant-barrier-insulation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/radiant-barrier-insulation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="layout-grid"></i>
+        <i data-lucide="layout-grid" aria-hidden="true"></i>
         <h3>Wall Insulation</h3>
         <p>Improve comfort and cut energy loss through exterior and interior walls, effective for both new builds and existing homes.</p>
-        <a href="/services/wall-insulation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/wall-insulation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="move-up"></i>
+        <i data-lucide="move-up" aria-hidden="true"></i>
         <h3>Ceiling Insulation</h3>
         <p>Prevent heat from escaping through ceilings in rooms below unconditioned spaces like attics, garages, and above additions.</p>
-        <a href="/services/ceiling-insulation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/ceiling-insulation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="building-2"></i>
+        <i data-lucide="building-2" aria-hidden="true"></i>
         <h3>Commercial Insulation</h3>
         <p>Large-scale insulation for offices, warehouses, retail spaces, and industrial buildings. Code-compliant and energy-efficient.</p>
-        <a href="/services/commercial-insulation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/commercial-insulation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="hard-hat"></i>
+        <i data-lucide="hard-hat" aria-hidden="true"></i>
         <h3>New Construction Insulation</h3>
         <p>We work directly with builders to install code-ready insulation during construction for maximum long-term performance.</p>
-        <a href="/services/new-construction-insulation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/new-construction-insulation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
@@ -249,16 +256,16 @@
     <p>Address sound, pests, and air quality problems that affect comfort and health in your home.</p>
     <div class="cards-grid">
       <div class="card">
-        <i data-lucide="volume-x"></i>
+        <i data-lucide="volume-x" aria-hidden="true"></i>
         <h3>Sound Mitigation</h3>
         <p>Reduce noise between rooms and floors with targeted insulation and acoustic treatments. Ideal for home theaters, bedrooms, and multi-unit buildings.</p>
-        <a href="/services/sound-mitigation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/sound-mitigation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="alert-triangle"></i>
+        <i data-lucide="alert-triangle" aria-hidden="true"></i>
         <h3>Rodent Mitigation</h3>
         <p>Seal rodent entry points and replace contaminated insulation. Protect your home from ongoing structural damage and health hazards.</p>
-        <a href="/services/rodent-mitigation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/rodent-mitigation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
@@ -272,22 +279,22 @@
     <p>Stop air leaks and energy waste at the source. Proper sealing works alongside insulation to maximize performance.</p>
     <div class="cards-grid">
       <div class="card">
-        <i data-lucide="filter"></i>
+        <i data-lucide="filter" aria-hidden="true"></i>
         <h3>Attic Air Sealing</h3>
         <p>Seal gaps, penetrations, and bypasses in your attic floor before insulating, one of the most cost-effective ways to cut energy costs.</p>
-        <a href="/services/attic-air-sealing" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/attic-air-sealing" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="settings"></i>
+        <i data-lucide="settings" aria-hidden="true"></i>
         <h3>Air Duct Sealing and Cleaning</h3>
         <p>Leaky ducts waste 20–30% of conditioned air. We seal and clean duct systems to restore efficiency and improve indoor air quality.</p>
-        <a href="/services/air-duct-sealing" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/air-duct-sealing" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="lock"></i>
+        <i data-lucide="lock" aria-hidden="true"></i>
         <h3>Building Sealing</h3>
         <p>Comprehensive air-sealing of the entire building envelope, walls, roof, foundation, to eliminate infiltration and improve energy performance.</p>
-        <a href="/services/building-sealing" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/building-sealing" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
@@ -301,16 +308,16 @@
     <p>Old or contaminated insulation must be properly removed before replacement. Attic ventilation protects your roof and extends insulation life.</p>
     <div class="cards-grid">
       <div class="card">
-        <i data-lucide="trash-2"></i>
+        <i data-lucide="trash-2" aria-hidden="true"></i>
         <h3>Insulation Removal</h3>
         <p>Complete removal of old, damaged, or contaminated insulation. We prepare the space properly so new insulation performs as intended.</p>
-        <a href="/services/insulation-removal" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/insulation-removal" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="card">
-        <i data-lucide="fan"></i>
+        <i data-lucide="fan" aria-hidden="true"></i>
         <h3>Attic Ventilation</h3>
         <p>Proper attic ventilation reduces summer heat buildup, controls moisture, and extends the life of your roof and insulation system.</p>
-        <a href="/services/attic-fans" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+        <a href="/services/attic-fans" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
@@ -323,22 +330,22 @@
     <h2>Why Proper Insulation Changes Everything</h2>
     <div class="benefits-grid">
       <div class="benefit">
-        <i data-lucide="trending-down"></i>
+        <i data-lucide="trending-down" aria-hidden="true"></i>
         <h3>Lower Energy Bills</h3>
         <p>Properly insulated homes use significantly less heating and cooling energy, often reducing utility costs by 20–40%.</p>
       </div>
       <div class="benefit">
-        <i data-lucide="home"></i>
+        <i data-lucide="home" aria-hidden="true"></i>
         <h3>Year-Round Comfort</h3>
         <p>Consistent temperatures throughout every room, eliminating cold spots, drafts, and the uncomfortable swings that come with poor insulation.</p>
       </div>
       <div class="benefit">
-        <i data-lucide="droplets"></i>
+        <i data-lucide="droplets" aria-hidden="true"></i>
         <h3>Moisture Protection</h3>
         <p>Good insulation prevents condensation, moisture infiltration, and the mold and structural damage that follow in Minnesota's freeze-thaw climate.</p>
       </div>
       <div class="benefit">
-        <i data-lucide="trending-up"></i>
+        <i data-lucide="trending-up" aria-hidden="true"></i>
         <h3>Increased Home Value</h3>
         <p>Energy-efficient homes command higher resale values. Professional insulation is one of the highest-ROI home improvements available.</p>
       </div>
@@ -384,7 +391,7 @@
       <p class="cta-banner__text">That is what we are here for. Contact us and we will help you understand your options and choose the right solution for your property.</p>
       <div class="cta-banner__actions">
         <a href="/contact" class="btn btn--primary btn--lg">Get a Free Estimate</a>
-        <a href="tel:+12182329884" class="cta-banner__phone"><i data-lucide="phone" style="width:20px;height:20px;stroke:currentColor;"></i> (218) 232-9884</a>
+        <a href="tel:+12182329884" class="cta-banner__phone"><i data-lucide="phone" style="width:20px;height:20px;stroke:currentColor;" aria-hidden="true"></i> (218) 232-9884</a>
       </div>
     </div>
   </div>
@@ -435,6 +442,6 @@
   <a href="/contact" class="btn btn--primary">Get a Quote</a>
 </div>
 <script defer src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-<script defer src="/assets/js/main.js?v=1.2"></script>
+<script defer src="/assets/js/main.js?v=2.0"></script>
 </body>
 </html>

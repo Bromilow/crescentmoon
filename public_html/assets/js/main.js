@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (window.lucide) lucide.createIcons();
 
   /* -------------------------------------------------------
-     3a. Hamburger Menu Toggle
+     Hamburger Menu Toggle
   ------------------------------------------------------- */
   var hamburger = document.querySelector('.site-nav__hamburger');
   var mobileMenu = document.getElementById('nav-mobile');
@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('nav-open');
 
-    // Reset accordion state when menu closes
     document.querySelectorAll('.site-nav__mobile-accordion.is-open').forEach(function (el) {
       el.classList.remove('is-open');
       var btn = el.querySelector('.site-nav__mobile-accordion-toggle');
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* -------------------------------------------------------
-     3h. Mobile Accordion Toggles
+     Mobile Accordion Toggles
   ------------------------------------------------------- */
   var accordionToggles = document.querySelectorAll('.site-nav__mobile-accordion-toggle');
 
@@ -65,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var isOpen = parentLi.classList.contains('is-open');
 
-      // Close all other accordion sections (single-open behavior)
       accordionToggles.forEach(function (otherToggle) {
         var otherLi = otherToggle.closest('.site-nav__mobile-accordion');
         if (otherLi && otherLi !== parentLi) {
@@ -74,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // Toggle the clicked section
       if (isOpen) {
         parentLi.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
@@ -86,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* -------------------------------------------------------
-     3b. Scroll Nav Effect
+     Scroll Nav Effect
   ------------------------------------------------------- */
   var siteNav = document.getElementById('site-nav');
 
@@ -103,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
   handleScroll();
 
   /* -------------------------------------------------------
-     3c. Services Dropdown
+     Services Dropdown
   ------------------------------------------------------- */
   var dropdownToggles = document.querySelectorAll('.site-nav__dropdown-toggle');
 
@@ -115,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var isOpen = parentLi.classList.contains('is-open');
 
-      // Close all other dropdowns first
       document.querySelectorAll('.site-nav__dropdown.is-open').forEach(function (el) {
         el.classList.remove('is-open');
         var btn = el.querySelector('.site-nav__dropdown-toggle');
@@ -130,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* -------------------------------------------------------
-     3g. Flyout Submenus
+     Flyout Submenus
   ------------------------------------------------------- */
   var flyoutToggles = document.querySelectorAll('.site-nav__flyout-toggle');
 
@@ -142,7 +138,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var isOpen = parentLi.classList.contains('is-open');
 
-      // Close all other flyouts
       document.querySelectorAll('.site-nav__has-flyout.is-open').forEach(function (el) {
         if (el !== parentLi) {
           el.classList.remove('is-open');
@@ -162,56 +157,78 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* -------------------------------------------------------
-     Global: Close dropdown + mobile menu on Escape / outside click
+     Global: Close on Escape / outside click
+     Uses boolean flags to avoid unnecessary querySelectorAll
   ------------------------------------------------------- */
+  var anyDropdownOpen = false;
+  var anyFlyoutOpen = false;
+
+  // Track open state
+  dropdownToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function () {
+      anyDropdownOpen = document.querySelector('.site-nav__dropdown.is-open') !== null;
+    });
+  });
+  flyoutToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function () {
+      anyFlyoutOpen = document.querySelector('.site-nav__has-flyout.is-open') !== null;
+    });
+  });
+
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-      // Close mobile menu
-      if (isMobileMenuOpen()) {
-        closeMobileMenu();
+      if (isMobileMenuOpen()) closeMobileMenu();
+
+      if (anyFlyoutOpen) {
+        document.querySelectorAll('.site-nav__has-flyout.is-open').forEach(function (el) {
+          el.classList.remove('is-open');
+          var btn = el.querySelector('.site-nav__flyout-toggle');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+        anyFlyoutOpen = false;
       }
-      // Close flyouts
-      document.querySelectorAll('.site-nav__has-flyout.is-open').forEach(function (el) {
-        el.classList.remove('is-open');
-        var btn = el.querySelector('.site-nav__flyout-toggle');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      });
-      // Close dropdowns
-      document.querySelectorAll('.site-nav__dropdown.is-open').forEach(function (el) {
-        el.classList.remove('is-open');
-        var btn = el.querySelector('.site-nav__dropdown-toggle');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      });
+
+      if (anyDropdownOpen) {
+        document.querySelectorAll('.site-nav__dropdown.is-open').forEach(function (el) {
+          el.classList.remove('is-open');
+          var btn = el.querySelector('.site-nav__dropdown-toggle');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+        anyDropdownOpen = false;
+      }
     }
   });
 
   document.addEventListener('click', function (e) {
-    // Close mobile menu when clicking outside
     if (isMobileMenuOpen() && mobileMenu && !mobileMenu.contains(e.target) && hamburger && !hamburger.contains(e.target)) {
       closeMobileMenu();
     }
 
-    // Close flyouts when clicking outside
-    document.querySelectorAll('.site-nav__has-flyout.is-open').forEach(function (el) {
-      if (!el.contains(e.target)) {
-        el.classList.remove('is-open');
-        var btn = el.querySelector('.site-nav__flyout-toggle');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      }
-    });
+    if (anyFlyoutOpen) {
+      document.querySelectorAll('.site-nav__has-flyout.is-open').forEach(function (el) {
+        if (!el.contains(e.target)) {
+          el.classList.remove('is-open');
+          var btn = el.querySelector('.site-nav__flyout-toggle');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      anyFlyoutOpen = document.querySelector('.site-nav__has-flyout.is-open') !== null;
+    }
 
-    // Close dropdowns when clicking outside
-    document.querySelectorAll('.site-nav__dropdown.is-open').forEach(function (el) {
-      if (!el.contains(e.target)) {
-        el.classList.remove('is-open');
-        var btn = el.querySelector('.site-nav__dropdown-toggle');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      }
-    });
+    if (anyDropdownOpen) {
+      document.querySelectorAll('.site-nav__dropdown.is-open').forEach(function (el) {
+        if (!el.contains(e.target)) {
+          el.classList.remove('is-open');
+          var btn = el.querySelector('.site-nav__dropdown-toggle');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      anyDropdownOpen = document.querySelector('.site-nav__dropdown.is-open') !== null;
+    }
   });
 
   /* -------------------------------------------------------
-     3d. Mobile Sticky CTA Bar
+     Mobile Sticky CTA Bar
   ------------------------------------------------------- */
   var mobileCta = document.getElementById('mobile-cta-bar');
   var heroSection = document.querySelector('.hero');
@@ -231,8 +248,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* -------------------------------------------------------
-     3e. Smooth Scroll
+     Smooth Scroll (respects prefers-reduced-motion)
   ------------------------------------------------------- */
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       var targetId = this.getAttribute('href');
@@ -243,20 +262,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
       e.preventDefault();
 
-      var navHeight = 80;
+      var navHeight = 90;
       var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
 
-      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      window.scrollTo({
+        top: targetPosition,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      });
     });
   });
 
   /* -------------------------------------------------------
-     3f. Close mobile menu on resize
+     Close mobile menu on resize (debounced + passive)
   ------------------------------------------------------- */
+  var resizeTimer;
   window.addEventListener('resize', function () {
-    if (window.innerWidth >= 640 && isMobileMenuOpen()) {
-      closeMobileMenu();
-    }
-  });
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (window.innerWidth >= 640 && isMobileMenuOpen()) {
+        closeMobileMenu();
+      }
+    }, 100);
+  }, { passive: true });
 
 });

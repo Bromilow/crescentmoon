@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#111111">
-  <title>Crescent Insights | Insulation Tips &amp; Building Performance | Crescent Moon Insulation</title>
-  <meta name="description" content="Crescent Insights is the blog from Crescent Moon Insulation. Practical knowledge on insulation, energy efficiency, and building performance for Minnesota homeowners and builders.">
+  <title>Crescent Insights | Crescent Moon Insulation Blog</title>
+  <meta name="description" content="Crescent Insights is the blog from Crescent Moon Insulation — practical tips on insulation, energy efficiency, and building performance for Minnesota homeowners and builders.">
   <link rel="canonical" href="https://www.crescentmooninsulation.com/blog">
   <meta property="og:title" content="Crescent Insights | Crescent Moon Insulation">
   <meta property="og:description" content="Practical knowledge on insulation, energy efficiency, and building performance for Minnesota homeowners and builders.">
@@ -18,21 +18,29 @@
   <meta name="twitter:title" content="Crescent Insights | Crescent Moon Insulation">
   <meta name="twitter:description" content="Practical knowledge on insulation, energy efficiency, and building performance for Minnesota homeowners and builders.">
   <meta name="twitter:image" content="https://www.crescentmooninsulation.com/assets/images/blog/blog-1-featured.webp">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="image" href="/assets/images/cta-background.webp" fetchpriority="high">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=2.0">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Blog","name":"Crescent Insights","description":"Practical knowledge on insulation, energy efficiency, and building performance for Minnesota homeowners and builders.","url":"https://www.crescentmooninsulation.com/blog","publisher":{"@type":"Organization","name":"Crescent Moon Insulation LLC","url":"https://www.crescentmooninsulation.com"}}
+  </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header class="site-nav" id="site-nav">
   <div class="container site-nav__inner">
-    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48"></a>
+    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48" fetchpriority="high"></a>
     <nav aria-label="Main navigation">
       <ul class="site-nav__links">
         <li><a href="/" class="site-nav__link">Home</a></li>
@@ -90,6 +98,7 @@
   </div>
   <div class="site-nav__mobile" id="nav-mobile" hidden>
     <button class="site-nav__mobile-close" aria-label="Close menu">&#x2715;</button>
+    <nav aria-label="Mobile navigation">
     <ul class="site-nav__mobile-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
@@ -147,11 +156,12 @@
       <li><a href="/blog">Blog</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
+    </nav>
     <a href="/contact" class="btn btn--primary">Get a Free Quote</a>
   </div>
 </header>
 
-<main>
+<main id="main-content">
 
   <section class="hero hero--short" id="hero" style="background-image: url('/assets/images/cta-background.webp');">
     <div style="position:absolute;inset:0;background:rgba(17,17,17,0.10);z-index:0;"></div>
@@ -173,7 +183,7 @@
             <p class="blog-card__date">February 26, 2026</p>
             <h2 class="blog-card__title">Welcome to Crescent Insights</h2>
             <p class="blog-card__excerpt">Crescent Insights is where we share practical knowledge about insulation, energy efficiency, and building performance. This blog explains what this space is for and what you can expect going forward.</p>
-            <a href="/blog/welcome-to-crescent-insights" class="blog-card__link">Read More <i data-lucide="arrow-right"></i></a>
+            <a href="/blog/welcome-to-crescent-insights" class="blog-card__link">Read More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
 
@@ -228,6 +238,6 @@
   <a href="/contact" class="btn btn--primary">Get a Quote</a>
 </div>
 <script defer src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-<script defer src="/assets/js/main.js?v=1.2"></script>
+<script defer src="/assets/js/main.js?v=2.0"></script>
 </body>
 </html>

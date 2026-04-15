@@ -83,7 +83,7 @@ input, select, textarea {
   --color-light-grey: #F5F5F5;
   --color-mid-grey: #E0E0E0;
   --color-border-grey: #D0D0D0;
-  --color-text-grey: #666666;
+  --color-text-grey: #616161;
   --color-charcoal: #333333;
   --color-near-black: #1A1A1A;
   --color-black: #111111;
@@ -612,13 +612,17 @@ a {
 }
 
 .site-nav__mobile-accordion-panel {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms ease;
+}
+
+.site-nav__mobile-accordion-panel > ul {
   overflow: hidden;
-  transition: max-height 300ms ease;
 }
 
 .site-nav__mobile-accordion.is-open .site-nav__mobile-accordion-panel {
-  max-height: 800px;
+  grid-template-rows: 1fr;
 }
 
 .site-nav__mobile-accordion-panel a {
@@ -768,6 +772,7 @@ a {
   transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
   white-space: nowrap;
   cursor: pointer;
+  will-change: transform;
 }
 
 .btn--primary {
@@ -867,12 +872,14 @@ a {
   border-radius: var(--radius-md);
   padding: 2.5rem;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  transition: box-shadow var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+  will-change: transform;
 }
 
 .card:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
+  border-color: var(--color-mid-grey);
 }
 
 .card__icon {
@@ -1267,9 +1274,10 @@ a {
 
 .form__input:focus,
 .form__select:focus {
-  outline: none;
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: 0;
   border-color: var(--color-charcoal);
-  box-shadow: 0 0 0 3px rgba(51,51,51,0.1);
+  box-shadow: 0 0 0 4px rgba(51,51,51,0.12);
   background: var(--color-white);
 }
 
@@ -1290,9 +1298,10 @@ a {
 }
 
 .form__textarea:focus {
-  outline: none;
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: 0;
   border-color: var(--color-charcoal);
-  box-shadow: 0 0 0 3px rgba(51,51,51,0.1);
+  box-shadow: 0 0 0 4px rgba(51,51,51,0.12);
   background: var(--color-white);
 }
 
@@ -1912,7 +1921,7 @@ a {
     background: var(--color-white);
     box-shadow: 0 -2px 12px rgba(0,0,0,0.1);
     z-index: 150;
-    gap: 0;
+    gap: 8px;
     padding: 6px 12px;
   }
 
@@ -2062,4 +2071,91 @@ a {
   height: auto;
   border-radius: var(--radius-md);
   margin: 2rem 0 2.5rem;
+}
+
+
+/* ==========================================================================
+   29. Skip Navigation Link
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--color-red);
+  color: var(--color-white);
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  z-index: 9999;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+
+/* ==========================================================================
+   30. Enhanced Focus Styles
+   ========================================================================== */
+
+.site-nav__link:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.cta-banner__phone:focus-visible,
+.cta-banner__phone a:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+
+/* ==========================================================================
+   31. Scroll Margin (for fixed nav offset on anchor links)
+   ========================================================================== */
+
+[id] {
+  scroll-margin-top: 90px;
+}
+
+
+/* ==========================================================================
+   32. Service Image Hover Zoom
+   ========================================================================== */
+
+.two-col__media {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.two-col__media img {
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.two-col:hover .two-col__media img {
+  transform: scale(1.03);
+}
+
+
+/* ==========================================================================
+   33. Prefers Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .two-col__media img {
+    transition: none !important;
+  }
 }

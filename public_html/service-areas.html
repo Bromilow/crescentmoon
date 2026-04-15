@@ -18,23 +18,28 @@
   <meta name="twitter:title" content="Insulation Near Brainerd &amp; Pillager MN | Crescent Moon">
   <meta name="twitter:description" content="Crescent Moon Insulation serves Brainerd, Baxter, Little Falls, Staples, Crosslake, Wadena and surrounding central Minnesota. Based in Pillager, MN.">
   <meta name="twitter:image" content="https://www.crescentmooninsulation.com/assets/images/cta-background.webp">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="image" href="/assets/images/hero-service-areas.webp" fetchpriority="high">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=2.0">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Crescent Moon Insulation LLC","telephone":"+1-218-232-9884","email":"crescentmoonco2022@gmail.com","areaServed":[{"@type":"State","name":"Minnesota"},{"@type":"City","name":"Brainerd"},{"@type":"City","name":"Baxter"},{"@type":"City","name":"Little Falls"},{"@type":"City","name":"Staples"},{"@type":"City","name":"Pequot Lakes"},{"@type":"City","name":"Crosslake"},{"@type":"City","name":"Wadena"},{"@type":"City","name":"Long Prairie"},{"@type":"City","name":"Pillager"}],"url":"https://www.crescentmooninsulation.com","priceRange":"$$"}
   </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-nav" id="site-nav">
   <div class="container site-nav__inner">
-    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48"></a>
+    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48" fetchpriority="high"></a>
     <nav aria-label="Main navigation">
       <ul class="site-nav__links">
         <li><a href="/" class="site-nav__link">Home</a></li>
@@ -92,6 +97,7 @@
   </div>
   <div class="site-nav__mobile" id="nav-mobile" hidden>
     <button class="site-nav__mobile-close" aria-label="Close menu">&#x2715;</button>
+    <nav aria-label="Mobile navigation">
     <ul class="site-nav__mobile-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
@@ -149,10 +155,11 @@
       <li><a href="/blog">Blog</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
+    </nav>
     <a href="/contact" class="btn btn--primary">Get a Free Quote</a>
   </div>
 </header>
-<main>
+<main id="main-content">
 <section class="hero hero--short" id="hero" style="background-image: url('/assets/images/hero-service-areas.webp');">
   <div class="container">
     <div class="hero__content">
@@ -284,6 +291,6 @@
   <a href="/contact" class="btn btn--primary">Get a Quote</a>
 </div>
 <script defer src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-<script defer src="/assets/js/main.js?v=1.2"></script>
+<script defer src="/assets/js/main.js?v=2.0"></script>
 </body>
 </html>

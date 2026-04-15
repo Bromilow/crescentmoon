@@ -18,15 +18,19 @@
   <meta name="twitter:title" content="Minnesota Insulation Contractor | Crescent Moon Insulation">
   <meta name="twitter:description" content="Professional residential and commercial insulation services across Minnesota. Spray foam, blown-in, and batt insulation. Free estimates. Call (218) 232-9884.">
   <meta name="twitter:image" content="https://www.crescentmooninsulation.com/assets/images/hero-home.webp">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="image" href="/assets/images/hero-home.webp" fetchpriority="high">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=2.0">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,10 +67,11 @@
   </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header class="site-nav" id="site-nav">
   <div class="container site-nav__inner">
-    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48"></a>
+    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48" fetchpriority="high"></a>
     <nav aria-label="Main navigation">
       <ul class="site-nav__links">
         <li><a href="/" class="site-nav__link">Home</a></li>
@@ -88,6 +93,13 @@
                 <li><a href="/services/ceiling-insulation" role="menuitem">Ceiling Insulation</a></li>
                 <li><a href="/services/commercial-insulation" role="menuitem">Commercial Insulation</a></li>
                 <li><a href="/services/new-construction-insulation" role="menuitem">New Construction Insulation</a></li>
+              </ul>
+            </li>
+            <li class="site-nav__has-flyout">
+              <button class="site-nav__flyout-toggle" aria-expanded="false" aria-haspopup="true">Mitigation <span aria-hidden="true">&#9658;</span></button>
+              <ul class="site-nav__flyout" role="menu">
+                <li><a href="/services/sound-mitigation" role="menuitem">Sound Mitigation</a></li>
+                <li><a href="/services/rodent-mitigation" role="menuitem">Rodent Mitigation</a></li>
               </ul>
             </li>
             <li class="site-nav__has-flyout">
@@ -117,6 +129,7 @@
   </div>
   <div class="site-nav__mobile" id="nav-mobile" hidden>
     <button class="site-nav__mobile-close" aria-label="Close menu">&#x2715;</button>
+    <nav aria-label="Mobile navigation">
     <ul class="site-nav__mobile-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
@@ -137,6 +150,16 @@
           <li><a href="/services/ceiling-insulation">Ceiling Insulation</a></li>
           <li><a href="/services/commercial-insulation">Commercial Insulation</a></li>
           <li><a href="/services/new-construction-insulation">New Construction Insulation</a></li>
+        </ul>
+      </li>
+      <li class="site-nav__mobile-accordion">
+        <button class="site-nav__mobile-accordion-toggle" aria-expanded="false">
+          <span>Mitigation</span>
+          <svg class="site-nav__mobile-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="site-nav__mobile-accordion-panel" role="group">
+          <li><a href="/services/sound-mitigation">Sound Mitigation</a></li>
+          <li><a href="/services/rodent-mitigation">Rodent Mitigation</a></li>
         </ul>
       </li>
       <li class="site-nav__mobile-accordion">
@@ -164,11 +187,12 @@
       <li><a href="/blog">Blog</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
+    </nav>
     <a href="/contact" class="btn btn--primary">Get a Free Quote</a>
   </div>
 </header>
 
-<main>
+<main id="main-content">
   <!-- SECTION 1, Hero -->
   <section class="hero" id="hero" style="background-image: url('/assets/images/hero-home.webp');">
     <div class="container">
@@ -194,28 +218,28 @@
       </div>
       <div class="cards-grid">
         <div class="card">
-          <div class="card__icon"><i data-lucide="layers"></i></div>
+          <div class="card__icon"><i data-lucide="layers" aria-hidden="true"></i></div>
           <h3 class="card__title">Insulation</h3>
           <p class="card__text">High-performance insulation solutions for new construction, upgrades, and existing homes. Designed to improve comfort, reduce energy loss, and support year-round efficiency.</p>
-          <a href="/services/attic-insulation" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+          <a href="/services/attic-insulation" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
         <div class="card">
-          <div class="card__icon"><i data-lucide="wind"></i></div>
+          <div class="card__icon"><i data-lucide="wind" aria-hidden="true"></i></div>
           <h3 class="card__title">Air Sealing</h3>
           <p class="card__text">Professional air sealing that closes gaps, cracks, and leaks throughout your home. Helps prevent drafts, improves indoor comfort, and maximizes insulation performance.</p>
-          <a href="/services/attic-air-sealing" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+          <a href="/services/attic-air-sealing" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
         <div class="card">
-          <div class="card__icon"><i data-lucide="trash-2"></i></div>
+          <div class="card__icon"><i data-lucide="trash-2" aria-hidden="true"></i></div>
           <h3 class="card__title">Insulation Removal</h3>
           <p class="card__text">Safe and thorough removal of old, damaged, or contaminated insulation. A critical first step before upgrades, sealing, or mitigation work.</p>
-          <a href="/services/insulation-removal" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+          <a href="/services/insulation-removal" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
         <div class="card">
-          <div class="card__icon"><i data-lucide="fan"></i></div>
+          <div class="card__icon"><i data-lucide="fan" aria-hidden="true"></i></div>
           <h3 class="card__title">Attic Ventilation</h3>
           <p class="card__text">Proper attic ventilation solutions that help regulate temperature, control moisture, and extend the life of your insulation and roofing system.</p>
-          <a href="/services/attic-fans" class="card__link">Learn More <i data-lucide="arrow-right"></i></a>
+          <a href="/services/attic-fans" class="card__link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -230,28 +254,28 @@
           <h2 style="color:#ffffff;">Why Minnesota Homeowners Trust Crescent Moon</h2>
           <div class="checklist" style="margin-top:2rem;">
             <div class="checklist__item">
-              <div class="checklist__icon" style="background:rgba(204,0,0,0.25);"><i data-lucide="check-circle"></i></div>
+              <div class="checklist__icon" style="background:rgba(204,0,0,0.25);"><i data-lucide="check-circle" aria-hidden="true"></i></div>
               <div>
                 <strong class="checklist__title" style="color:#ffffff;display:block;font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;font-size:1.25rem;font-weight:700;text-transform:uppercase;margin-bottom:0.375rem;">Local Knowledge. Real Experience.</strong>
                 <p class="checklist__text" style="color:rgba(255,255,255,0.85);">We understand what it takes to insulate homes properly in Minnesota. Every project is planned with local building standards, real-world conditions, and long-term performance in mind, not shortcuts or guesswork.</p>
               </div>
             </div>
             <div class="checklist__item">
-              <div class="checklist__icon" style="background:rgba(204,0,0,0.25);"><i data-lucide="check-circle"></i></div>
+              <div class="checklist__icon" style="background:rgba(204,0,0,0.25);"><i data-lucide="check-circle" aria-hidden="true"></i></div>
               <div>
                 <strong class="checklist__title" style="color:#ffffff;display:block;font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;font-size:1.25rem;font-weight:700;text-transform:uppercase;margin-bottom:0.375rem;">Quality Materials, Every Time</strong>
                 <p class="checklist__text" style="color:rgba(255,255,255,0.85);">We use proven, high-quality insulation products from trusted manufacturers. Materials are chosen for durability, efficiency, and lasting results.</p>
               </div>
             </div>
             <div class="checklist__item">
-              <div class="checklist__icon" style="background:rgba(204,0,0,0.25);"><i data-lucide="check-circle"></i></div>
+              <div class="checklist__icon" style="background:rgba(204,0,0,0.25);"><i data-lucide="check-circle" aria-hidden="true"></i></div>
               <div>
                 <strong class="checklist__title" style="color:#ffffff;display:block;font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;font-size:1.25rem;font-weight:700;text-transform:uppercase;margin-bottom:0.375rem;">Clean, Professional Workmanship</strong>
                 <p class="checklist__text" style="color:rgba(255,255,255,0.85);">Your home deserves respect. Our crews work carefully, protect your space, and leave every job site clean and organized. The work should feel professional from start to finish, not stressful.</p>
               </div>
             </div>
             <div class="checklist__item">
-              <div class="checklist__icon" style="background:rgba(204,0,0,0.25);"><i data-lucide="check-circle"></i></div>
+              <div class="checklist__icon" style="background:rgba(204,0,0,0.25);"><i data-lucide="check-circle" aria-hidden="true"></i></div>
               <div>
                 <strong class="checklist__title" style="color:#ffffff;display:block;font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;font-size:1.25rem;font-weight:700;text-transform:uppercase;margin-bottom:0.375rem;">Honest Pricing. Clear Expectations.</strong>
                 <p class="checklist__text" style="color:rgba(255,255,255,0.85);">You&#8217;ll receive a detailed estimate before any work begins. We explain what&#8217;s included, stand by our pricing, and never surprise you with hidden costs after the job is done.</p>
@@ -349,7 +373,7 @@
         <p class="cta-banner__text">Contact Crescent Moon Insulation today to see how expert insulation can improve comfort, efficiency, and performance in your home or business.</p>
         <div class="cta-banner__actions">
           <a href="/contact" class="btn btn--primary btn--lg">Request a Free Estimate</a>
-          <a href="tel:+12182329884" class="cta-banner__phone"><i data-lucide="phone" style="width:20px;height:20px;"></i> (218) 232-9884</a>
+          <a href="tel:+12182329884" class="cta-banner__phone"><i data-lucide="phone" style="width:20px;height:20px;" aria-hidden="true"></i> (218) 232-9884</a>
         </div>
       </div>
     </div>
@@ -401,6 +425,6 @@
   <a href="/contact" class="btn btn--primary">Get a Quote</a>
 </div>
 <script defer src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-<script defer src="/assets/js/main.js?v=1.2"></script>
+<script defer src="/assets/js/main.js?v=2.0"></script>
 </body>
 </html>

@@ -18,24 +18,29 @@
   <meta name="twitter:title" content="Attic Insulation Minnesota | Crescent Moon Insulation">
   <meta name="twitter:description" content="Professional attic insulation services designed to improve comfort, reduce energy loss, and protect Minnesota homes through every season.">
   <meta name="twitter:image" content="https://www.crescentmooninsulation.com/assets/servicepage/Attic%20Insulation%20Image.webp">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="image" href="/assets/servicepage/Hero%20Image%20on%20all%20service%20Pages.webp" fetchpriority="high">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=2.0">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Service","name":"Attic Insulation","provider":{"@type":"LocalBusiness","name":"Crescent Moon Insulation LLC"},"areaServed":{"@type":"State","name":"Minnesota"},"description":"Professional attic insulation services designed to improve comfort, reduce energy loss, and protect Minnesota homes through every season."}
   </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header class="site-nav" id="site-nav">
   <div class="container site-nav__inner">
-    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48"></a>
+    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48" fetchpriority="high"></a>
     <nav aria-label="Main navigation">
       <ul class="site-nav__links">
         <li><a href="/" class="site-nav__link">Home</a></li>
@@ -93,6 +98,7 @@
   </div>
   <div class="site-nav__mobile" id="nav-mobile" hidden>
     <button class="site-nav__mobile-close" aria-label="Close menu">&#x2715;</button>
+    <nav aria-label="Mobile navigation">
     <ul class="site-nav__mobile-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
@@ -150,11 +156,12 @@
       <li><a href="/blog">Blog</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
+    </nav>
     <a href="/contact" class="btn btn--primary">Get a Free Quote</a>
   </div>
 </header>
 
-<main>
+<main id="main-content">
 
   <section class="hero hero--short" id="hero" style="background-image: url('/assets/servicepage/Hero%20Image%20on%20all%20service%20Pages.webp');">
     <div class="container">
@@ -186,27 +193,27 @@
     <div class="container">
       <div class="benefits-grid">
         <div class="benefit">
-          <i data-lucide="trending-up"></i>
+          <i data-lucide="trending-up" aria-hidden="true"></i>
           <h3>Scalable Solutions</h3>
           <p>We handle attic insulation projects of all sizes, from small residential upgrades to full attic retrofits.</p>
         </div>
         <div class="benefit">
-          <i data-lucide="layers"></i>
+          <i data-lucide="layers" aria-hidden="true"></i>
           <h3>Multiple Insulation Types</h3>
           <p>We install the right product for your attic, including blown-in, batt, spray foam, and other insulation options based on your home's needs.</p>
         </div>
         <div class="benefit">
-          <i data-lucide="dollar-sign"></i>
+          <i data-lucide="dollar-sign" aria-hidden="true"></i>
           <h3>Energy Cost Reduction</h3>
           <p>Proper attic insulation helps lower heating and cooling costs by reducing heat loss and improving overall efficiency.</p>
         </div>
         <div class="benefit">
-          <i data-lucide="shield-check"></i>
+          <i data-lucide="shield-check" aria-hidden="true"></i>
           <h3>Code Compliance</h3>
           <p>All attic insulation work meets or exceeds Minnesota residential building and energy code standards.</p>
         </div>
         <div class="benefit">
-          <i data-lucide="clock"></i>
+          <i data-lucide="clock" aria-hidden="true"></i>
           <h3>Minimal Disruption</h3>
           <p>Our crew works efficiently, protects your home, and completes installations with minimal interruption to your daily routine.</p>
         </div>
@@ -281,7 +288,7 @@
         <p class="cta-banner__text">Contact Crescent Moon Insulation to discuss attic insulation options, timelines, and pricing for your home.</p>
         <div class="cta-banner__actions">
           <a href="/contact" class="btn btn--primary btn--lg">Request a Free Estimate</a>
-          <a href="tel:+12182329884" class="cta-banner__phone"><i data-lucide="phone" style="width:20px;height:20px;stroke:currentColor;"></i> (218) 232-9884</a>
+          <a href="tel:+12182329884" class="cta-banner__phone"><i data-lucide="phone" style="width:20px;height:20px;stroke:currentColor;" aria-hidden="true"></i> (218) 232-9884</a>
         </div>
       </div>
     </div>
@@ -333,7 +340,7 @@
   <a href="/contact" class="btn btn--primary">Get a Quote</a>
 </div>
 <script defer src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-<script defer src="/assets/js/main.js?v=1.2"></script>
+<script defer src="/assets/js/main.js?v=2.0"></script>
 
 </body>
 </html>

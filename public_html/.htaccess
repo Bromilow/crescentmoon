@@ -28,7 +28,12 @@ ErrorDocument 404 /404.html
 # --- Prevent directory listing ---
 Options -Indexes
 
-# --- Enable Gzip compression ---
+# --- Enable Brotli compression (better than Gzip) ---
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript text/javascript application/json image/svg+xml
+</IfModule>
+
+# --- Enable Gzip compression (fallback) ---
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html
   AddOutputFilterByType DEFLATE text/css
@@ -56,13 +61,20 @@ Options -Indexes
   ExpiresByType font/woff2  "access plus 1 year"
   ExpiresByType application/font-woff "access plus 1 year"
 
-  # CSS and JS — 1 month
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType text/javascript "access plus 1 month"
+  # CSS and JS — 1 year (safe because files use ?v= cache busting)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
 
-  # HTML — 1 hour (allows content updates to propagate quickly)
+  # HTML — 1 hour
   ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# --- Cache-Control: immutable for versioned static assets ---
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|webp|png|jpg|jpeg|woff2|ico)$">
+    Header append Cache-Control "immutable"
+  </FilesMatch>
 </IfModule>
 
 # --- Security headers ---

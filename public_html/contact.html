@@ -18,23 +18,28 @@
   <meta name="twitter:title" content="Get a Free Insulation Estimate | Crescent Moon Insulation">
   <meta name="twitter:description" content="Contact Crescent Moon Insulation for a free estimate on residential or commercial insulation in Minnesota. Call (218) 232-9884 or fill out our online form.">
   <meta name="twitter:image" content="https://www.crescentmooninsulation.com/assets/images/cta-background.webp">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="image" href="/assets/images/hero-contact.webp" fetchpriority="high">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=2.0">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ContactPage","name":"Contact Crescent Moon Insulation LLC","url":"https://www.crescentmooninsulation.com/contact","mainEntity":{"@type":"HomeAndConstructionBusiness","name":"Crescent Moon Insulation LLC","telephone":"+1-218-232-9884","email":"crescentmoonco2022@gmail.com","areaServed":{"@type":"State","name":"Minnesota"}}}
   </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-nav" id="site-nav">
   <div class="container site-nav__inner">
-    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48"></a>
+    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48" fetchpriority="high"></a>
     <nav aria-label="Main navigation">
       <ul class="site-nav__links">
         <li><a href="/" class="site-nav__link">Home</a></li>
@@ -92,6 +97,7 @@
   </div>
   <div class="site-nav__mobile" id="nav-mobile" hidden>
     <button class="site-nav__mobile-close" aria-label="Close menu">&#x2715;</button>
+    <nav aria-label="Mobile navigation">
     <ul class="site-nav__mobile-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
@@ -149,10 +155,11 @@
       <li><a href="/blog">Blog</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
+    </nav>
     <a href="/contact" class="btn btn--primary">Get a Free Quote</a>
   </div>
 </header>
-<main>
+<main id="main-content">
 <section class="hero hero--contact" id="hero" style="background-image: url('/assets/images/hero-contact.webp');">
   <div class="container">
     <div class="hero__content">
@@ -203,28 +210,28 @@
         <div class="contact-info-card">
           <h3>Contact Information</h3>
           <div class="contact-detail">
-            <div class="contact-detail__icon"><i data-lucide="phone"></i></div>
+            <div class="contact-detail__icon"><i data-lucide="phone" aria-hidden="true"></i></div>
             <div>
               <p class="contact-detail__label">Phone</p>
               <p class="contact-detail__value"><a href="tel:+12182329884">(218) 232-9884</a></p>
             </div>
           </div>
           <div class="contact-detail">
-            <div class="contact-detail__icon"><i data-lucide="mail"></i></div>
+            <div class="contact-detail__icon"><i data-lucide="mail" aria-hidden="true"></i></div>
             <div>
               <p class="contact-detail__label">Email</p>
               <p class="contact-detail__value"><a href="mailto:crescentmoonco2022@gmail.com">crescentmoonco2022@gmail.com</a></p>
             </div>
           </div>
           <div class="contact-detail">
-            <div class="contact-detail__icon"><i data-lucide="clock"></i></div>
+            <div class="contact-detail__icon"><i data-lucide="clock" aria-hidden="true"></i></div>
             <div>
               <p class="contact-detail__label">Business Hours</p>
               <p class="contact-detail__value">Mon&#8211;Fri 7:00 AM &#8211; 5:00 PM</p>
             </div>
           </div>
           <div class="contact-detail">
-            <div class="contact-detail__icon"><i data-lucide="map-pin"></i></div>
+            <div class="contact-detail__icon"><i data-lucide="map-pin" aria-hidden="true"></i></div>
             <div>
               <p class="contact-detail__label">Service Area</p>
               <p class="contact-detail__value">Crescent Moon Insulation serves communities throughout the Brainerd Lakes area and surrounding central Minnesota. Our primary service area is typically within about one hour of our home base in Pillager, though some projects may be serviced beyond that range. Primary service towns include Brainerd, Baxter, Little Falls, Staples, Motley, Pequot Lakes, Breezy Point, Nisswa, Crosslake, Crosby, Aitkin, Royalton, Long Prairie, and Wadena. Not sure if we cover your area? Give us a call and we will be happy to let you know.</p>
@@ -280,6 +287,6 @@
   <a href="/contact" class="btn btn--primary">Get a Quote</a>
 </div>
 <script defer src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-<script defer src="/assets/js/main.js?v=1.2"></script>
+<script defer src="/assets/js/main.js?v=2.0"></script>
 </body>
 </html>

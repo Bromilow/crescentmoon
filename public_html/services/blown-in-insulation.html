@@ -18,24 +18,29 @@
   <meta name="twitter:title" content="Blown-In Attic Insulation Minnesota | Crescent Moon">
   <meta name="twitter:description" content="Professional blown-in attic insulation in Minnesota. Improve energy efficiency, reduce ice dams, and lower heating bills. Free attic assessments available.">
   <meta name="twitter:image" content="https://www.crescentmooninsulation.com/assets/servicepage/Blown-in%20Insulation.webp">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="image" href="/assets/servicepage/Hero%20Image%20on%20all%20service%20Pages.webp" fetchpriority="high">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=1.2">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=2.0">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Service","name":"Blown-In Attic Insulation","provider":{"@type":"LocalBusiness","name":"Crescent Moon Insulation LLC"},"areaServed":{"@type":"State","name":"Minnesota"},"description":"Blown-in loose-fill insulation for attic spaces. Full, even coverage. Reduces heating costs and prevents ice dams common in Minnesota's climate."}
   </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header class="site-nav" id="site-nav">
   <div class="container site-nav__inner">
-    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48"></a>
+    <a href="/" class="site-nav__logo"><img src="/assets/images/newLogo.png" alt="Crescent Moon Insulation LLC" width="48" height="48" fetchpriority="high"></a>
     <nav aria-label="Main navigation">
       <ul class="site-nav__links">
         <li><a href="/" class="site-nav__link">Home</a></li>
@@ -93,6 +98,7 @@
   </div>
   <div class="site-nav__mobile" id="nav-mobile" hidden>
     <button class="site-nav__mobile-close" aria-label="Close menu">&#x2715;</button>
+    <nav aria-label="Mobile navigation">
     <ul class="site-nav__mobile-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
@@ -150,11 +156,12 @@
       <li><a href="/blog">Blog</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
+    </nav>
     <a href="/contact" class="btn btn--primary">Get a Free Quote</a>
   </div>
 </header>
 
-<main>
+<main id="main-content">
 <!-- Section 1: Hero -->
 <section class="hero hero--short" id="hero" style="background-image: url('/assets/servicepage/Hero%20Image%20on%20all%20service%20Pages.webp');">
   <div class="container">
@@ -187,35 +194,35 @@
   <div class="container">
     <div class="benefits-grid">
       <div class="benefit">
-        <div class="benefit__icon"><i data-lucide="grid-3x3"></i></div>
+        <div class="benefit__icon"><i data-lucide="grid-3x3" aria-hidden="true"></i></div>
         <div>
           <h3 class="benefit__title">Complete Coverage</h3>
           <p class="benefit__text">Loose-fill material conforms to irregular spaces, wiring, pipes, and framing without leaving gaps or voids.</p>
         </div>
       </div>
       <div class="benefit">
-        <div class="benefit__icon"><i data-lucide="clock"></i></div>
+        <div class="benefit__icon"><i data-lucide="clock" aria-hidden="true"></i></div>
         <div>
           <h3 class="benefit__title">Quick Installation</h3>
           <p class="benefit__text">Most attic projects are completed in a single visit, with minimal disruption to your daily routine.</p>
         </div>
       </div>
       <div class="benefit">
-        <div class="benefit__icon"><i data-lucide="dollar-sign"></i></div>
+        <div class="benefit__icon"><i data-lucide="dollar-sign" aria-hidden="true"></i></div>
         <div>
           <h3 class="benefit__title">Cost-Effective Upgrade</h3>
           <p class="benefit__text">Blown-in insulation offers excellent thermal performance at a lower cost compared to spray foam, making it ideal for attic applications.</p>
         </div>
       </div>
       <div class="benefit">
-        <div class="benefit__icon"><i data-lucide="trending-up"></i></div>
+        <div class="benefit__icon"><i data-lucide="trending-up" aria-hidden="true"></i></div>
         <div>
           <h3 class="benefit__title">Improves Existing Insulation</h3>
           <p class="benefit__text">Can be added on top of old insulation to bring your attic up to current Minnesota energy code standards.</p>
         </div>
       </div>
       <div class="benefit">
-        <div class="benefit__icon"><i data-lucide="snowflake"></i></div>
+        <div class="benefit__icon"><i data-lucide="snowflake" aria-hidden="true"></i></div>
         <div>
           <h3 class="benefit__title">Reduces Ice Dams</h3>
           <p class="benefit__text">A properly insulated attic keeps heat from escaping through the roof, which is the leading cause of ice dam formation in Minnesota.</p>
@@ -272,7 +279,7 @@
       <p class="cta-banner__text">Most Minnesota homes are. Contact us for a free attic assessment and find out how blown-in insulation can lower your bills and protect your roof.</p>
       <div class="cta-banner__actions">
         <a href="/contact" class="btn btn--primary btn--lg">Schedule Your Free Assessment</a>
-        <a href="tel:+12182329884" class="cta-banner__phone"><i data-lucide="phone" style="width:20px;height:20px;stroke:currentColor;"></i> (218) 232-9884</a>
+        <a href="tel:+12182329884" class="cta-banner__phone"><i data-lucide="phone" style="width:20px;height:20px;stroke:currentColor;" aria-hidden="true"></i> (218) 232-9884</a>
       </div>
     </div>
   </div>
@@ -346,6 +353,6 @@
   <a href="/contact" class="btn btn--primary">Get a Quote</a>
 </div>
 <script defer src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-<script defer src="/assets/js/main.js?v=1.2"></script>
+<script defer src="/assets/js/main.js?v=2.0"></script>
 </body>
 </html>
