@@ -1,7 +1,7 @@
 # CRESCENT MOON INSULATION LLC — MASTER IMPLEMENTATION PLAN
 
 **Date:** 2026-02-25
-**Owner:** Ben | +1 218 232 9884 | crescentmoonco2022@gmail.com | Pillager, MN
+**Owner:** Ben | +1 320 412 9228 | crescentmoonco2022@gmail.com | Pillager, MN
 **Stack:** Static HTML/CSS/JS | GoDaddy Deluxe Managed WordPress Hosting (SSL included)
 **Produced by:** Three Opus sub-agents (UX/Structure + Design/Visual + Copy/Content)
 
@@ -226,7 +226,7 @@ All headings: `text-transform: uppercase`. Eyebrow: `color: #CC0000`.
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   "name": "Crescent Moon Insulation LLC",
-  "telephone": "+1-218-232-9884",
+  "telephone": "+1-320-412-9228",
   "areaServed": { "@type": "State", "name": "Minnesota" },
   "url": "https://www.crescentmooninsulation.com",
   "priceRange": "$$"
@@ -245,7 +245,7 @@ All headings: `text-transform: uppercase`. Eyebrow: `color: #CC0000`.
 - `favicon.ico` + `favicon-32.png` + `apple-touch-icon.png`
 
 ### Local SEO
-- **NAP (consistent everywhere):** Crescent Moon Insulation LLC | +1 (218) 232-9884 | Minnesota
+- **NAP (consistent everywhere):** Crescent Moon Insulation LLC | +1 (320) 412-9228 | Minnesota
 - **Google Business Profile:** Set up / claim for Ben — service-area business (statewide MN)
 - **Service areas content:** Northern MN (Duluth, Hibbing, Grand Rapids, Bemidji, International Falls) / Central (Brainerd, St. Cloud, Alexandria) / Twin Cities (Minneapolis, St. Paul) / Southern (Rochester, Moorhead, Willmar)
 

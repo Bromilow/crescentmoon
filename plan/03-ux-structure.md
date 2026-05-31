@@ -1,7 +1,7 @@
 # CRESCENT MOON INSULATION LLC — UX & PAGE STRUCTURE PLAN
 
 **Prepared:** 2026-02-25
-**Company:** Crescent Moon Insulation LLC | Owner: Ben | +1 218 232 9884 | Minnesota
+**Company:** Crescent Moon Insulation LLC | Owner: Ben | +1 320 412 9228 | Minnesota
 
 ---
 
@@ -49,7 +49,7 @@ crescentmooninsulation.com/
 +-----------------------------------------------------------------------+
 | [newLogo.png]       Quick Links    Our Services     Get In Touch      |
 | (black ring blends  Home           Spray Foam       Central MN        |
-| into footer bg —    About Us       Blown-In         (218) 232-9884    |
+| into footer bg —    About Us       Blown-In         (320) 412-9228    |
 | reads as red badge) Services       Batt & Roll      crescentmoonco    |
 |                     Service Areas  Commercial       2022@gmail.com    |
 | Mon–Fri 7am–5pm     Contact        New Construction Mon–Fri 7am–5pm  |
@@ -92,7 +92,7 @@ crescentmooninsulation.com/
 
 **SEO:**
 - Meta Title: `Minnesota Insulation Contractor | Crescent Moon Insulation` (58 chars)
-- Meta Description: `Professional residential and commercial insulation services across Minnesota. Spray foam, blown-in, and batt insulation. Free estimates. Call (218) 232-9884.` (155 chars)
+- Meta Description: `Professional residential and commercial insulation services across Minnesota. Spray foam, blown-in, and batt insulation. Free estimates. Call (320) 412-9228.` (155 chars)
 - H1: "Built for Minnesota Winters."
 - URL: `/`
 
@@ -295,7 +295,7 @@ All 5 service pages follow identical structure:
 
 **SEO:**
 - Meta Title: `Get a Free Insulation Estimate | Crescent Moon Insulation` (57 chars)
-- Meta Description: `Contact Crescent Moon Insulation for a free estimate on residential or commercial insulation in Minnesota. Call (218) 232-9884 or fill out our online form.` (156 chars)
+- Meta Description: `Contact Crescent Moon Insulation for a free estimate on residential or commercial insulation in Minnesota. Call (320) 412-9228 or fill out our online form.` (156 chars)
 - H1: "Let's Talk About Your Project"
 - URL: `/contact`
 
@@ -314,7 +314,7 @@ All 5 service pages follow identical structure:
 
 ### CTA Hierarchy
 1. **Primary:** "Get a Free Quote" (red button → /contact)
-2. **Secondary:** "Call +1 218 232 9884" (tel: link)
+2. **Secondary:** "Call +1 320 412 9228" (tel: link)
 3. **Tertiary:** "Learn More", "Our Services" (ghost buttons, text links)
 
 ### Conversion Points Per Page
@@ -356,7 +356,7 @@ All 5 service pages follow identical structure:
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   "name": "Crescent Moon Insulation LLC",
-  "telephone": "+1-218-232-9884",
+  "telephone": "+1-320-412-9228",
   "areaServed": { "@type": "State", "name": "Minnesota" },
   "url": "https://www.crescentmooninsulation.com",
   "priceRange": "$$",
@@ -435,7 +435,7 @@ All 5 service pages follow identical structure:
 | Mobile | 0–639px | 1-col, sticky bottom CTA bar, hamburger nav, 60vh hero |
 
 ### Mobile-Specific Requirements
-- All phone numbers: `<a href="tel:+12182329884">` (clickable)
+- All phone numbers: `<a href="tel:+13204129228">` (clickable)
 - Minimum 44×44px tap targets on all interactive elements
 - Form inputs minimum 52px height (prevents iOS zoom)
 - No horizontal scrolling at any width
