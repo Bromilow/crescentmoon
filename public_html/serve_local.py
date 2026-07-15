@@ -59,7 +59,7 @@ if __name__ == '__main__':
     import socketserver
     PORT = 8080
     os.chdir(ROOT)
+    socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(('', PORT), CleanURLHandler) as httpd:
-        httpd.allow_reuse_address = True
         print(f'\n  Local server running at http://localhost:{PORT}\n')
         httpd.serve_forever()

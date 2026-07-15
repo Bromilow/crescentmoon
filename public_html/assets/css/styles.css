@@ -1234,9 +1234,38 @@ a {
   padding: 1.5rem 0;
 }
 
+.site-footer__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .site-footer__bottom p {
   font-size: var(--text-small);
   color: var(--color-text-grey);
+}
+
+.site-footer__siteby {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text-grey);
+  font-size: var(--text-small);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  margin-left: auto;
+}
+
+.site-footer__siteby:hover {
+  opacity: 1;
+}
+
+.site-footer__siteby img {
+  height: 13px !important;
+  width: auto !important;
+  max-height: 13px !important;
+  display: inline-block;
 }
 
 
